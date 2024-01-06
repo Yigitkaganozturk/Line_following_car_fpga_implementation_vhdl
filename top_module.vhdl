@@ -5,7 +5,7 @@ entity top_module is
     Port ( clk : in STD_LOGIC;
            sw : in std_logic;
            pwm1 : out STD_LOGIC;
-   											      Öztürk        
+   											             
 pwm2 : out STD_LOGIC;
            control: out std_logic_vector (3 downto 0);
            light : in STD_LOGIC);
@@ -24,7 +24,7 @@ component servo_driver is
 end component;
 
 component timer is
- 											       Öztürk
+ 											       
     generic  ( const : integer := 100000000);
     Port ( clk : in STD_LOGIC;
            sr : in STD_LOGIC;
@@ -41,7 +41,6 @@ timer1 : timer generic map(const=> 25000000 ) port map(clk=>clk,sr=>light,rslt_o
 selector <= light & timeing;
 with selector select
 determine1 <= "01" when "1001",
- Öztürk
               --"01" when "1010",
               
               --"01" when "1011",
@@ -60,13 +59,12 @@ determine2 <= "01" when "1001",
               
               --"01" when "1011",
               "10" when "1100",
-             										       Öztürk
+             										       
               "10" when "1101",
               --"10" when "1110",
               
               "10" when "0000",
 
-              
               "00" when others;
 control <= selector;
 end Behavioral;
